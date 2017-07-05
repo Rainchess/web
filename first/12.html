@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue常用指令</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            var c=new Vue({
+                el:'body',
+                data:{
+                    msg:'hello',
+                    msg2:19,
+                    msg3:true,
+                    arr:['a','b','c'],
+                    json:{a:'a',b:'b',c:'c'}
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    {{msg}}
+    <br/>
+    <input type="text" v-model="msg">
+    <br/>
+    <input type="text" v-model="msg">
+    <br/>
+    {{msg2}}
+    <br/>
+    {{msg3}}
+    <br/>
+    {{arr}}
+</body>
+</html>

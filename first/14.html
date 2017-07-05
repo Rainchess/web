@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue事件</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    arr:['one','two','three'],
+                    json:{a:'one',b:'two',c:'three'}
+                },
+                methods:{
+                    show:function () {
+                        alert(1);
+                    },
+                    add:function () {
+                        this.arr.push('four')
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮1" v-on:click="show()">
+        <input type="button" value="按钮2" v-on:click="add()">
+        <ul>
+            <li v-for="value in arr" >
+                {{value}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
