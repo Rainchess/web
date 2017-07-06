@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮div消失</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    a:true
+                }
+            })
+        }
+    </script>
+    <style>
+        #div1{
+            width: 200px;
+            height: 100px;
+            background: #00a0e9;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮" v-on:click="a=faulse">
+        <div id="div1" v-show="a"></div>
+    </div>
+</body>
+</html>
