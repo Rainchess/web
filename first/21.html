@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-class</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    json:{
+                        red:true,
+                        blue:true,
+                    }
+                },
+            });
+        };
+    </script>
+    <style>
+        .red{
+            color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <strong :class="json">张屿麒</strong>
+    </div>
+</body>
+</html>
