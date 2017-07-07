@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue模板</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    msg:'zyq',
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="msg">
+        <br/>
+        {{msg}}
+        <br/>
+        {{*msg}}
+        <br/>
+        {{{msg}}}
+    </div>
+</body>
+</html>
