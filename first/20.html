@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue属性</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    url:'QQ图片20170617202307.png',
+                    w:'200px',
+                    t:'百度一下，你就知道',
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img :src="url" :width="w" :title="t">
+    </div>
+</body>
+</html>
