@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue双向过滤器</title>
+    <script src="vue.js"></script>
+    <script>
+        Vue.filter('filterHtml',{
+            read:function (input) {
+                alert(1);
+                return input.replace(/<[^<]+>/g,'');
+            },
+            write:function (val) {
+                console.log(val);
+                return val;
+            }
+        });
+        window.onload=function () {
+            var vm=new Vue({
+                el:'#box',
+                data:{
+                    msg:'<strong>zyq</strong>'
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="msg|filterHtml">
+        <br/>
+        {{{msg}}}
+    </div>
+</body>
+</html>
