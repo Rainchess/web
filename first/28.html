@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue自定义指令-拖拽</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: #00a0e9;
+            position: absolute;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        Vue.directive('drag',function () {
+            var oDiv=this.el;
+            oDiv.onmousedown=function (ev) {
+                var disX=ev.clientX-oDiv.offsetLeft;
+                var disY=ev.clientY-oDiv.offsetTop;
+                document.onmousemove=function (ev) {
+                    var l=ev.clientX-disX;
+                    var t=ev.clientY-disY;
+                    oDiv.style.left=l+'px';
+                    oDiv.style.top=t+'px';
+                };
+                document.onmouseup=function () {
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+            };
+        });
+        window.onload=function () {
+            var vm=new Vue({
+                el:'#box',
+                data:{
+                    msg:'zyq'
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="div1" v-drag></div>
+    </div>
+</body>
+</html>
