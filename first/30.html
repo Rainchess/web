@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue监听数据变化</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function () {
+            var vm=new Vue({
+                el:'#box',
+                data:{
+                    json:{name:'zyq', age:19},
+                }
+            });
+            vm.$watch('json',function () {
+                alert('发生变化');
+            },{deep:true});
+            document.onclick=function () {
+                vm.json.name='zyl';
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        {{json|json}}
+    </div>
+</body>
+</html>
