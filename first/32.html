@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue组件</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <my-aaa></my-aaa>
+    </div>
+    <template id="aaa">
+        <h1>标题1</h1>
+        <ul>
+            <li v-for="val in arr">
+                {{val}}
+            </li>
+        </ul>
+    </template>
+    <script>
+        var vm=new Vue({
+            el:'#box',
+            components:{
+                'my-aaa':{
+                    data:function(){
+                        return{
+                            arr:['a','b','c']
+                        }
+                    },
+                    template:'#aaa'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
