@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue2.0循环</title>
+    <script src="vue2.0.js"></script>
+    <script>
+        window.onload=function () {
+            new Vue({
+                el:'#box',
+                data:{
+                    arr:['one','two','three']
+                },
+                methods:{
+                    add:function () {
+                        this.arr.push('four');
+                    }
+                }
+            })
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="添加" @click="add">
+        <ul>
+            <li v-for="(val,index) in arr" :key="index">
+                {{val}}
+                {{index}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
