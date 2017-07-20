@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组</title>
+    <script>
+        function aa() {
+            var a=new Array();
+            var b=[];
+            b[0]=123;
+            b[1]='aa';
+            b[2]=true;
+            b[3]=new Date();
+            alert(b);
+            b.length=1;
+            alert(b);
+            var c,d;
+            c=new Array(0,1,2,3,4);
+            d=c.join('-');
+            document.write(d);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="aa" onclick="aa();">
+</body>
+</html>
