@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数</title>
+    <script>
+        function aa(a,b,c) {
+            alert(a+b+c);
+        }
+        function bb() {
+            var result=aa(4,5,6);
+            alert(result);
+            var r=cc;
+            r();
+        }
+        var cc=function () {
+            alert('函数也是对象')
+        }
+        function dd(s) {
+            s();
+        }
+        function ee() {
+            dd(cc);
+        }
+        var testEval=function (s) {
+            eval(s);
+            alert(f+100);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="aa" onclick="aa(1,2,3);">
+    <input type="button" value="bb" onclick="bb();">
+    <input type="button" value="ee" onclick="ee();">
+    <input type="button" value="testEval" onclick="testEval('var f=7;alert(f)');">
+</body>
+</html>
