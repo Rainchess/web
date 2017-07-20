@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js事件机制</title>
+    <script>
+        function test() {
+            var a=3;
+            alert(a);
+        }
+    </script>
+</head>
+<body onload="alert('页面加载完成')" onunload="alert('页面卸载')">
+    <input type="button" value="test" onclick="test()">
+    <form>
+        用户名：<input type="text" name="username" onblur="alert('失去焦点')">
+        <br/>
+        <select onchange="alert('元素值改变')">
+            <option>湖南</option>
+            <option>黑龙江</option>
+            <option>广东</option>
+        </select>
+    </form>
+    <input type="button" value="双击" ondblclick="alert('双击')">
+</body>
+</html>
