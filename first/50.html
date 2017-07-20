@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量声明</title>
+    <script>
+        function aa() {
+        //  var i=3+ccc;    //不得使用未经声明的变量
+            var c=1,d=2;
+            a="aaa";    //如果没有加var，那么当这句代码执行后，变量会当成全局变量来处理
+            var date=new Date();
+            alert(date);
+        }
+        function bb() {
+            alert(a);
+        }
+        function testDataType() {
+            var a;
+            var b=null;
+            var c=true;
+            var d="<img src=\"d.jpg\">";
+            var d2="<img src='d.jpg'>";
+            var e=3;
+            var f=3.14;
+            var g=1/0;
+            var g2=parseInt("hhh");
+            var g3=parseInt("hhh");
+            if(g2!=g3){ //NaN是唯一一个跟自己不相等的值
+                alert(g2);
+            }
+        }
+        function testDataTypeAutoConvert() {
+            var a=true;
+            var b="true";
+            var c=1;
+            if(a==b){
+                alert("a==b");
+            }else{
+                alert("a!=b");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="aa" onclick="aa();">
+    <input type="button" value="bb" onclick="bb();">
+    <input type="button" value="testDataType" onclick="testDataType();">
+    <input type="button" value="testDataTypeAutoConvert" onclick="testDataTypeAutoConvert();">
+</body>
+</html>
