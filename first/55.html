@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作CSS属性</title>
+    <style>
+        #div1{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 10px;
+            height: 10px;
+            background-color: #00a0e9;
+        }
+        .blue{
+            color: #00a0e9;
+        }
+        .red{
+            color: rosybrown;
+        }
+    </style>
+    <script>
+        var d=100;
+        function test() {
+            var a=document.getElementById('div1');
+            d+=10;
+            a.style.left=d+'px';
+        }
+        function test2() {
+            var a=document.getElementById('div0');
+            a.className='red';
+        }
+    </script>
+</head>
+<body>
+    <div id="div0" class="blue">zyq</div>
+    <div id="div1"></div>
+    <input type="button" value="测试" onclick="test()">
+    <input type="button" value="测试2" onclick="test2()">
+</body>
+</html>
