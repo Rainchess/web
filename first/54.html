@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-event对象</title>
+    <script>
+        function aa(event) {
+            var e=window.event||event;
+            alert(e);
+            var src=e.srcElement||e.target;
+            alert(src);
+            var c=e.keyCode||e.charCode;
+            alert(c);
+        }
+    </script>
+</head>
+<body onkeypress="aa(event)">
+    <input type="button" value="event" onclick="aa(event)">
+</body>
+</html>
