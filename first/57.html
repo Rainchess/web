@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js定时控制</title>
+    <script>
+        function aa(a,b) {
+            alert(a+b);
+        }
+        var t;
+        function testSetTimeOut() {
+            var c=7,d=3;
+            t=setTimeout(function () {
+                aa(c,d);
+            },3000);
+        }
+        function testClearTimeOut() {
+            clearTimeout(t);
+        }
+        var str='';
+        function bb() {
+            str+='---<br/>';
+            var d=document.getElementById('div1');
+            d.innerHTML=str;
+        }
+        var t2;
+        function testSetInterval() {
+            t2=setInterval(function () {
+                bb();
+            },1000);
+        }
+        function testClearInterval() {
+            clearInterval(t2);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <input type="button" value="测试setTimeout" onclick="testSetTimeOut()">
+    <input type="button" value="测试clearTimeout" onclick="testClearTimeOut()">
+    <input type="button" value="测试setInterval" onclick="testSetInterval()">
+    <input type="button" value="测试clearInterval" onclick="testClearInterval()">
+</body>
+</html>
