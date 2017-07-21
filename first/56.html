@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-json</title>
+    <script>
+        function test() {
+            var a={name:'张三',age:19,study:function (a,b) {
+                alert('学习中...');
+            },sleep:function () {
+                alert('有点困...');
+            }};
+            var b={name:'李四',age:21,friend:a};
+            alert(b.friend.name);
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="测试" onclick="test()">
+</body>
+</html>
