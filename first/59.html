@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作表单域对象</title>
+    <script>
+        function testFrmField() {
+            var frm=document.regFrm;
+            var a=frm.username;
+            var a2=frm.elements[0];
+            var a3=frm.elements['username'];
+            var result='';
+            result+=a.value+'<br/>';
+            $('div1').innerHTML=result;
+            a.disabled=true;
+            frm.sub.disabled=true;
+            document.regFrm.pwd.blur();
+        }
+        function $(e) {
+            return document.getElementById(e);
+        }
+        function testTextField() {
+            var u=document.regFrm.username;
+            alert(u.value+'\n'+u.defaultValue);
+            u.value='zyl';
+            alert(u.value+'\n'+u.defaultValue);
+        }
+        function testRadioField() {
+            var r=document.regFrm.sex;
+            for(var i=0;i<r.length;i++){
+                if (r[i].checked){
+                    alert(r[i].value);
+                }
+            }
+        }
+        function testCheckboxField() {
+            var r=document.regFrm.city;
+            for(var i=0;i<r.length;i++)
+                r[i].checked=!r[i].checked;
+        }
+        function testSelectField() {
+            var s=document.regFrm.hometown;
+            alert(s.value+'\n'+s.selectedIndex);
+            s.value=3;
+            alert(s.options[s.selectedIndex].text);
+            for(var i=0;i<s.options.length;i++) {
+                if (s.options[i].selected) {
+                    alert(s.options[i].text);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="document.regFrm.pwd.focus()">
+    <div id="div1"></div>
+    <hr/>
+    <form name="regFrm" action="1.html" method="post" id="form1id">
+        用户名：<input type="text" name="username" value="zyq"><br/>
+        密码：<input type="password" name="pwd"><br/>
+        性别：
+        <input type="radio" name="sex" value="1">男
+        <input type="radio" name="sex" value="2">女<br/>
+        喜欢的城市：
+        <input type="checkbox" name="city" value="1">衡阳
+        <input type="checkbox" name="city" value="2">哈尔滨
+        <input type="checkbox" name="city" value="3">长沙<br/>
+        出生地：
+        <select name="hometown">
+            <option value="1">衡阳</option>
+            <option value="2">哈尔滨</option>
+            <option value="3">长沙</option>
+        </select>
+        <input type="submit" name="sub" value="提交">
+    </form>
+    <hr/>
+    <input type="button" value="测试表单域对象" onclick="testFrmField()">
+    <input type="button" value="测试文本域对象" onclick="testTextField()">
+    <input type="button" value="测试单选按钮对象" onclick="testRadioField()">
+    <input type="button" value="测试复选框对象" onclick="testCheckboxField()">
+    <input type="button" value="测试下拉列表" onclick="testSelectField()">
+</body>
+</html>
