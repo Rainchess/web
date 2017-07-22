@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js表单</title>
+    <script>
+        function testGetFrm() {
+            var frm1=$('form1id');
+            var frm2=document.getElementsByName('regFrm')[0];
+            var frm3=document.getElementsByTagName('form')[0];
+            var frm4=document.regFrm;
+            var frm5=document.forms[0];
+            var frm6=document.forms['regFrm'];
+            var d1=$('div1');
+            var result='';
+            result+=frm6.action+'<br/>'+frm2.methods+'<br/>'+frm1.name+'<br/>';
+            result+=frm1.length+'<br/>';
+            result+='第二个表单域对象：'+frm1.elements[1].name+'<br/>';
+            d1.innerHTML=result;
+        }
+        function $(e) {
+            return document.getElementById(e);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <hr/>
+    <form name="regFrm" action="1.html" method="post" id="form1id">
+        用户名：<input type="text" name="username" value="zyq" ><br/>
+        密码：<input type="password" name="pwd"><br/>
+        <input type="submit" name="sub" value="提交">
+    </form>
+    <hr/>
+    <input type="button" value="测试表单对象" onclick="testGetFrm()">
+</body>
+</html>
