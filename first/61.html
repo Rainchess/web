@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js表单</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+    <script>
+        function check(frm) {
+            var username=frm.username.value.trim();
+            var pwd=frm.pwd.value.trim();
+            var pwd2=$('pwd2').value.trim();
+            var flag=true;
+            $('usernameMsg').innerHTML='';
+            $('pwdMsg').innerHTML='';
+            if(username.length==0){
+                $('usernameMsg').innerHTML='&times;用户名不能为空';
+                flag=false;
+            }
+            if(pwd.length==0){
+                $('pwdMsg').innerHTML='&times;密码不能为空';
+                flag=false;
+            }
+            if(pwd!=pwd2){
+                $('pwd2Msg').innerHTML='&times;两次输入密码不一致';
+                flag=false;
+            }
+            var flag2=false;
+            for(var i=0;i<frm.favorite.length;i++){
+                if(frm.favorite[i].checked){
+                    flag2=true;
+                    break;
+                }
+            }
+            $('favoriteMsg').innerHTML='';
+            if(!flag2){
+                $('favoriteMsg').innerHTML='&times;爱好不能为空';
+            }
+            return flag&&flag2;
+        }
+        function $(e) {
+            return document.getElementById(e);
+        }
+        String.prototype.trim=function () {
+            return this.replace(/(^\s+)|(\s+$)/,'');
+        }
+    </script>
+</head>
+<body>
+    <form name="regFrm" onsubmit="return check(this)">
+        用户名：<input type="text" name="username"><span class="error" id="usernameMsg"></span> <br/>
+        密码：<input type="password" name="pwd"><span class="error" id="pwdMsg"></span> <br/>
+        确认密码：<input type="password" id="pwd2"><span class="error" id="pwd2Msg"></span><br/>
+        爱好：<span class="error" id="favoriteMsg"></span><br/>
+        <input type="checkbox" name="favorite" value="1">唱歌
+        <input type="checkbox" name="favorite" value="2">跳舞
+        <input type="checkbox" name="favorite" value="3">画画<br/>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
