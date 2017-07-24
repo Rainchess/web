@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-for循环</title>
+    <script>
+        //求1~100之间奇数的和
+        var sum=0;
+        for(var i=1;i<=100;i++){
+            if(i%2==1){
+                sum+=i;
+            }
+        }
+        document.write(sum+'<br/>');
+        //求1~100之间偶数的和
+        sum=0;
+        for(var i=1;i<=100;i++){
+            if(i%2==0){
+                sum+=i;
+            }
+        }
+        document.write(sum+'<br/>');
+        //通过for循环实现百钱买百鸡
+        for(var i=0;i<=20;i++){
+            for(var j=0;j<=33;j++){
+                for(var k=0;k<=100;k++){
+                    if((i+j+k==100)&&(5*i+3*j+k/3==100)){
+                        document.write('公鸡'+i+'母鸡'+j+'小鸡'+k+'<br/>');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
