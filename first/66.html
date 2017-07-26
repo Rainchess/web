@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象的特性</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var obj={};
+        console.log(obj.toString());
+        var arr=[];
+        console.log(arr.toString());
+        console.log(Object.prototype.toString.call(arr));
+        var d=new Date();
+        console.log(Object.prototype.toString.call(d));
+        function classof(obj) {
+            if(obj===null){
+                return 'null';
+            }else if(obj===undefined){
+                return 'undefined';
+            }else{
+                return Object.prototype.toString.call(obj).slice(8,-1);
+            }
+        }
+        var x=null;
+        console.log(classof(x));
+        x=undefined;
+        console.log(classof(x));
+        x=123;
+        console.log(classof(x));
+        x=12.3;
+        console.log(classof(x));
+        x='zyq';
+        console.log(classof(x));
+        x=true;
+        console.log(classof(x));
+        x=[];
+        console.log(classof(x));
+        x=window;
+        console.log(classof(x));
+        x=function () {};
+        console.log(classof(x));
+        function f() {}
+        x=new f();
+        console.log(classof(x));
+    </script>
+</body>
+</html>
