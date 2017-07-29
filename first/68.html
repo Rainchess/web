@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-RegExp</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var patt=new RegExp('javascript');
+        var res=patt.test('this is a javascript course');
+        console.log(res);
+        patt=/javascript/i;
+        res=patt.test('this is javascript course');
+        console.log(res);
+        //[]
+        res=/[abc]/.test('blue');
+        console.log(res);
+        res=/[^abc]/.test('blue');
+        console.log(res);
+        res=/[0-9]/.test('this is a test');
+        console.log(res);
+        rea=/[a-z]/.test('123');
+        console.log(res);
+        res=/php|javascript|ios/i.test('PHP');
+        console.log(res);
+        //元字符
+        res=/./.test('\n');
+        console.log(res);
+        res=/./.test('this is a test');
+        console.log(res);
+        res=/\w/.test('hello world');//[a-zA-Z0-9]
+        console.log(res);
+        res=/\w/.test('!@#');
+        console.log(res);
+        res=/\W/.test('!@#');//[^a-zA-z0-9]
+        console.log(res);
+        res=/\s/.test('hello world');
+        console.log(res);
+        res=/\S/.test('   ');
+        console.log(res);
+        res=/\bg/.test('good');
+        console.log(res);
+        res=/o\b/.test('good');
+        console.log(res);
+        res=/d\b/.test('good');
+        console.log(res);
+        res=/o\B/.test('good');
+        console.log(res);
+        //量词
+        res=/o+/.test('good');
+        console.log(res);
+        res=/o*/.test('good');
+        console.log(res);
+        res=/o?/.test('good');
+        console.log(res);
+        res=/o{2}/.test('good');
+        console.log(res);
+        res=/o{1,3}/.test('good');
+        console.log(res);
+        res=/^g/.test('good');
+        console.log(res);
+        res=/d$/.test('good');
+        console.log(res);
+        res=/e(?=l)/.test('hello world');
+        console.log(res);
+        res=/e(?!l)/.test('hello world');
+        console.log(res);
+        res=/\d/.test('abc');//[0-9]
+        console.log(res);
+        res=/\D/.test('abc');//[^0-9]
+        console.log(res);
+
+        res=/is/i.exec('this is a test');
+        console.log(res);
+        console.log(res[0]);
+        var str='this is a test';
+        patt=/i/ig;
+        var myArr;
+        while ((myArr=patt.exec(str))!==null){
+            var msg='找到了'+myArr[0];
+            msg+='下一个匹配从'+patt.lastIndex+'开始';
+            console.log(msg);
+        }
+
+        str='this is a test';
+        res=str.match(/is/ig);
+        console.log(res);
+        res=str.search(/is/i);
+        console.log(res);
+        var str1=str.replace(/is/ig,'!');
+        console.log(str1);
+
+        str='2017-07-29';
+        res=str.replace(/(\d{4})-(\d{2})-(\d{2})/,'$2/$3/$1');
+        console.log(res);
+        str='Hello World';
+        res=str.replace(/[A-Z]/g,fun);
+        function fun(match) {
+            return match.toLowerCase();
+        }
+        console.log(res);
+
+        res=str.split(/\s+/);
+        console.log(res);
+    </script>
+</body>
+</html>
