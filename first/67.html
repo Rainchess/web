@@ -9,8 +9,9 @@
         var obj={};
         obj.x=1;
         obj.y=2;
+        console.log(obj.x+'\n'+obj.y);
         obj.x=123;
-        obj.y=4566;
+        obj.y=456;
         console.log(obj.x+'\n'+obj.y);
         for(var p in obj){
         	console.log(p);
@@ -24,7 +25,7 @@
         obj.x=456;
         console.log(obj.x);
         for(p in obj){
-        	console.log('对象中得属性：'+p+'\n');
+        	console.log('对象中的属性：'+p+'\n');
         }
         console.log(Object.keys(obj));
         console.log(Object.getOwnPropertyNames(obj));
