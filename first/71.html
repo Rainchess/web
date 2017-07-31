@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var arr=[];
+        arr[0]='a';
+        arr[1]='b';
+        arr.push('c');
+        console.log(arr);
+        var res=arr.pop();
+        console.log(res);
+        console.log(arr);
+        arr.unshift(1,2,3);
+        console.log(arr);
+        res=arr.shift();
+        console.log(res);
+        console.log(arr);
+        arr=['a','b','c'];
+        delete arr[0];
+        console.log(arr);
+        console.log(arr.length);
+    </script>
+</body>
+</html>
