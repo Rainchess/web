@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js对象</title>
+    <script>
+        function Person(name,age,job) {
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.friends=['zyq','zyl'];
+        }
+        Person.prototype={
+            constructor:Person,
+            sayName:function () {
+                alert(this.name);
+            }
+        };
+        var person1=new Person('wnx',19,'hhh');
+        var person2=new Person('lll',20,'hhh');
+        person1.friends.push('zyy');
+        alert(person1.friends);
+        alert(person2.friends);
+        alert(person1.friends===person2.friends);
+        alert(person1.sayName===person2.sayName);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
