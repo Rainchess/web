@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js组合继承</title>
+    <script>
+        function SuperType(name) {
+            this.name=name;
+            this.colors=['red','blue','green'];
+        }
+        SuperType.prototype.sayName=function () {
+            alert(this.name)
+        };
+        function SubType(name,age) {
+            SuperType.call(this,name);
+            this.age=age;
+        }
+        SubType.prototype=new SuperType();
+        SubType.prototype.constructor=SubType;
+        SubType.prototype.sayAge=function () {
+            alert(this.age);
+        };
+        var instance1=new SubType('zyq',19);
+        instance1.color.push('black');
+        alert(instance1.colors);
+        instance1.sayName();
+        instance1.sayAge();
+        var instance2=new SubType('zyl',19);
+        alert(instance2.colors);
+        instance2.sayName();
+        instance2.sayAge();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
