@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js寄生式继承</title>
+    <script>
+        function createAnother(original) {
+            var clone=object(original);
+            clone.sayHi=function () {
+                alert('Hi!');
+            };
+            return clone;
+        }
+        var person={
+            name:'zyq',
+            friends:['zyl','wnx']
+        };
+        var anotherPerson=createAnother(person);
+        anotherPerson.sayHi();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
