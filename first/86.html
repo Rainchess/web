@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js原型式继承</title>
+    <script>
+        var person={
+            name:'zyq',
+            friends:['zyl','wnx']
+        };
+        var anotherPerson=Object.create(person,{
+            name:{
+                value:'xsx'
+            }
+        });
+        alert(anotherPerson.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
