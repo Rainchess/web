@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js私有变量</title>
+    <script>
+        (function () {
+            var name='';
+            Person=function (value) {
+                name=value;
+            };
+            Person.prototype.getName=function () {
+                return name;
+            };
+            Person.prototype.setName=function (value) {
+                name=value;
+            };
+        })();
+        var person1=new Person('zyq');
+        alert(person1.getName());
+        person1.setName('zyl');
+        alert(person1.getName());
+        var person2=new Person('wnx');
+        alert(person1.getName());
+        alert(person2.getName());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
