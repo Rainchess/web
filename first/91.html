@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js安全限制</title>
+    <script>
+        var blocked=false;
+        try{
+            var baiduWin=window.open('https://www.baidu.com/','_blank');
+            if(baiduWin==null){
+                blocked=true;
+            }
+        }catch (ex){
+            blocked=true;
+        }
+        if(blocked){alert('The popup was blocked!');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
