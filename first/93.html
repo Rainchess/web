@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js怪癖检测</title>
+    <script>
+        var hasEnumShadowsQuirk=function () {
+            var o={toString:function () {}()};
+            var count=0;
+            for(var prop in o){
+                if(prop=='toString'){
+                    count++;
+                }
+            }
+            return(count>1);
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
