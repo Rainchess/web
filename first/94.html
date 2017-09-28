@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js怪癖</title>
+    <script>
+        //null是个对象
+        alert(typeof null);
+        //NaN是个数值
+        alert(typeof NaN);
+        alert(NaN===NaN);
+        //无关键字的数组等同于false
+        alert(new Array()==false);
+        //replace()可以接受回调函数
+        alert('10 13 21 48 52'.replace(/\d+/g, '*'));
+        //函数可以执行其本身
+        (function () {
+            alert('hello')
+        })();
+        //0.1+0.2!==0.3
+        var num1=0.1;
+        var num2=0.2;
+        var shouldEqual=0.3;
+        alert(num1+num2==shouldEqual);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
