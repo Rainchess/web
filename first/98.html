@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-element类型</title>
+    <script>
+        var div=document.getElementById('myDiv');
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('className'));
+        console.log(div.getAttribute('title'));
+        console.log(div.getAttribute('lang'));
+        console.log(div.getAttribute('dir'));
+        div.setAttribute('id','someOtherId');
+        div.setAttribute('class','ft');
+        div.setAttribute('title','Some other text');
+        div.setAttribute('lang','fr');
+        div.setAttribute('dir','rtl');
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('className'));
+        console.log(div.getAttribute('title'));
+        console.log(div.getAttribute('lang'));
+        console.log(div.getAttribute('dir'));
+        div.removeAttribute('class');
+        console.log(div.getAttribute('className'));
+    </script>
+</head>
+<body>
+    <div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr"></div>
+</body>
+</html>
