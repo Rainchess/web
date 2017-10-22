@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js动态样式</title>
+    <script>
+        function changeBackgroundColor() {
+            var obj = document.getElementById("btnB");
+            obj.style.backgroundColor= "black";
+        }
+        function changeFontSize() {
+            var obj = document.getElementById("btnB");
+            obj.style.cssText = "background-color:pink; display:block;color:White;font-size:28px;";
+        }
+        function addRadius() {
+            var obj = document.getElementById("btnB");
+            obj.className = "style2";
+            obj.setAttribute("class", "style2");
+        }
+    </script>
+    <style>
+        .style1{
+            margin:10px auto ;
+            background-color:#9999FF;
+            display:block;color:White;
+            border:1px solid white;
+            padding:10px 25px; font-size:18px;
+        }
+        .style1:hover{
+            background-color:#66B3FF;
+            cursor:pointer;
+        }
+        .style2{
+            margin:10px auto ;
+            background-color:gray;
+            display:block;
+            color:black;
+            border:1px solid white;
+            padding:10px 25px;
+            font-size:18px;
+        }
+        .style2:hover{
+            background-color:black;
+            color:White;
+            cursor:pointer
+        }
+    </style>
+</head>
+<body>
+    <div>
+         <input id="btnB" type="button" name="btnLogin" value="登录" class="style1" />
+         <div id="tool">
+            <input type="button" value="【obj.style.className】更改样式" onclick="changeBackgroundColor()"/>
+            <input type="button" value="【obj.style.cssText】更改样式" onclick="changeFontSize()" />
+            <input type="button" value="【obj.className】更改样式" onclick="addRadius()" />
+         </div>
+    </div>
+</body>
+</html>
