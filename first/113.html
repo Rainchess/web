@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-DOM事件</title>
+    <style>
+        #div1{
+            background-color:green;
+            width:120px;
+            height:20px;
+            padding:40px;
+            color:#ffffff;
+        }
+    </style>
+    <script>
+        function mOver(obj)
+        {
+            obj.innerHTML="谢谢"
+        }
+        function mOut(obj)
+        {
+            obj.innerHTML="把鼠标移到上面"
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" onmouseover="mOver(this)" onmouseout="mOut(this)">把鼠标移到上面</div>
+</body>
+</html>
