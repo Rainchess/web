@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>js-DOM事件</title>
+    <style>
+        #div1{
+            background-color:green;
+            color:#ffffff;
+            width:90px;
+            height:20px;
+            padding:40px;
+            font-size:12px;
+        }
+    </style>
 </head>
 <body>
-    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">请点击这里</div>
+    <div id="div1" onmousedown="mDown(this)" onmouseup="mUp(this)">请点击这里</div>
     <script>
         function mDown(obj)
         {
