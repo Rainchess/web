@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js跨浏览器使用XSLT</title>
+    <script>
+        function transform(context,xslt) {
+            if (typeof XSLTProcessor!='undefined'){
+                var processor=new XSLTProcessor();
+                processor.importStylesheet(xslt);
+                var result=processor.transformToDocument(context);
+                return (new XMLSerializer()).serializeToString(result);
+            }else if (typeof context.transformNode!='undefined'){
+                return context.transformNode(xslt);
+            }else {
+                throw new Error('No XSLT processor available.');
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
