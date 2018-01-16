@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数组</title>
+    <script>
+        var a1=['衡阳','哈尔滨','长沙'];
+        console.log(a1);
+        a1.push('双鸭山','广州');
+        console.log(a1);
+        a1.pop();
+        console.log(a1);
+        a1.shift();
+        console.log(a1);
+        delete a1[1];
+        console.log(a1);
+        a1.splice(1,0,'北京');
+        console.log(a1);
+        a1.splice(1,2,'天津');
+        console.log(a1);
+        a1.splice(1);
+        console.log(a1);
+        var a2=['湖南','黑龙江'];
+        var a3=a1.concat(a2);
+        console.log(a3);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
